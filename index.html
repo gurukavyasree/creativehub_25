@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Creative Hub Freelance Services - Posters, Websites, Logos, Video" />
+  <title>Creative Hub Freelance Services</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f9fbfc;
+      color: #222;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 90%;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.08);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-left: 10px;
+    }
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin-right: 10px;
+    }
+    nav li a {
+      font-weight: 600;
+      color: #2980b9;
+      transition: color 0.3s ease;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    nav li a:hover,
+    nav li a:focus {
+      background-color: #2980b9;
+      color: #fff;
+      outline: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%);
+      color: white;
+      padding: 100px 20px 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-logo {
+      max-width: 170px;
+      margin: 0 auto 25px auto;
+      border-radius: 16px;
+      background: white;
+      padding: 15px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
+    }
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 0.02em;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .btn-primary {
+      background-color: #e67e22;
+      color: white;
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgb(230 126 34 / 0.6);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #cf711a;
+      outline: none;
+    }
+
+    /* Section Titles */
+    h2 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #34495e;
+      letter-spacing: 0.04em;
+    }
+    
+    /* About Section */
+    #about {
+      background-color: white;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+      border-radius: 14px;
+      box-shadow: 0 12px 24px rgb(0 0 0 / 0.05);
+    }
+    #about p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Services Section */
+    #services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    .service-card {
+      flex: 1 1 280px;
+      background: white;
+      padding: 28px 24px;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgb(0 0 0 / 0.07);
+      cursor: default;
+      transition: box-shadow 0.3s ease;
+      text-align: center;
+    }
+    .service-card:hover,
+    .service-card:focus-within {
+      box-shadow: 0 24px 60px rgb(230 126 34 / 0.45);
+      outline: none;
+    }
+    .service-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      color: #e67e22;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      margin-bottom: 60px;
+    }
+    #portfolio .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+      gap: 24px;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      background-color: white;
+    }
+    .portfolio-item:hover,
+    .portfolio-item:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 48px rgb(230 126 34 / 0.35);
+      outline: none;
+    }
+    .portfolio-item img {
+      border-radius: 16px;
+      user-select: none;
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover img,
+    .portfolio-item:focus-within img {
+      transform: scale(1.1);
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+      background-color: #fef8f4;
+      padding: 60px 20px;
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgb(230 126 34 / 0.25);
+      margin-bottom: 60px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonial {
+      font-style: italic;
+      color: #7a7168;
+      border-left: 6px solid #e67e22;
+      padding-left: 18px;
+      margin-bottom: 32px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    .testimonial:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: white;
+      max-width: 600px;
+      margin: 0 auto 80px auto;
+      padding: 50px 25px;
+      border-radius: 20px;
+      box-shadow: 0 24px 50px rgb(230 126 34 / 0.3);
+    }
+    #contact h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #e67e22;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    label {
+      font-weight: 600;
+      color: #555;
+      font-size: 1.05rem;
+    }
+    input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 14px 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      border-color: #e67e22;
+      outline: none;
+      box-shadow: 0 0 8px #e67e2299;
+    }
+    button {
+      margin-top: 10px;
+      font-weight: 700;
+      padding: 16px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgb(230 126 34 / 0.5);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    button:hover,
+    button:focus {
+      background-color: #cf711a;
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2c3e50;
+      color: #dfe6e9;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 750px) {
+      nav ul {
+        gap: 18px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .service-card {
+        flex: 1 1 100%;
+      }
+      #portfolio .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+<header role="banner">
+  <div class="logo" tabindex="0" aria-label="Creative Hub Freelance Services Logo">
+    <img src="C:\Users\pc\Downloads\logo.jpeg" alt="Creative Hub logo" />
+  </div>
+  <nav role="navigation" aria-label="Primary navigation">
+    <ul>
+      <li><a href="#about" tabindex="0">About</a></li>
+      <li><a href="#services" tabindex="0">Services</a></li>
+      <li><a href="#portfolio" tabindex="0">Portfolio</a></li>
+      <li><a href="#testimonials" tabindex="0">Testimonials</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" role="main" aria-labelledby="hero-title">
+  <div class="hero-logo" tabindex="0" aria-label="Creative Hub Logo">
+    <img src="C:\Users\pc\Downloads\logo.jpeg" alt="Creative Hub logo" />
+  </div>
+  <h1 id="hero-title">Welcome to Creative Hub Freelance Services</h1>
+  <p>Your creative partner for Posters, Websites, Logos, and Video production. Bringing ideas to life with professional design and innovation.</p>
+  <a href="#contact" class="btn-primary" role="button" tabindex="0">Request a Free Quote</a>
+</section>
+
+<section id="about" class="container" aria-label="About Creative Hub">
+  <h2>About Us</h2>
+  <p>At Creative Hub, we create impactful posters, dynamic websites, memorable logos, and engaging videos. We’re committed to working closely with clients to materialize your vision beautifully and professionally.</p>
+  <p>With experience spanning across multiple creative formats, our freelance team delivers not only quality work but also excellent service.</p>
+</section>
+
+<section id="services" class="container" aria-label="Services offered by Creative Hub">
+  <h2>Our Services</h2>
+  <div>
+    <div class="service-card" tabindex="0" aria-describedby="svc1-desc">
+      <h3>Logo Design</h3>
+      <p id="svc1-desc">Unique, scalable logos tailored to your brand identity, with unlimited revisions and vector files included.</p>
+    </div>
+    <div class="service-card" tabindex="0" aria-describedby="svc2-desc">
+      <h3>Webpage Creation</h3>
+      <p id="svc2-desc">Custom responsive websites that look great on all devices and deliver optimal user experience.</p>
+    </div>
+    <div class="service-card" tabindex="0" aria-describedby="svc3-desc">
+      <h3>Poster Design</h3>
+      <p id="svc3-desc">High-resolution, print-ready posters designed to capture attention for any event or promotion.</p>
+    </div>
+    <div class="service-card" tabindex="0" aria-describedby="svc4-desc">
+      <h3>Video Production</h3>
+      <p id="svc4-desc">Creative and engaging video content including promotional videos, animations, and edits.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="container" aria-label="Portfolio showcasing Creative Hub work">
+  <h2>Portfolio</h2>
+<p> Here is the sample of logo,poster,and website that i have design </p>
+  <div class="portfolio-grid">
+
+    <a href="#" class="portfolio-item" tabindex="0" aria-label="Logo design work sample 1">
+      <img src="C:\Users\pc\Downloads\Gemini_Generated_Image_1dgtb11dgtb11dgt.png" alt="Logo Design Sample 1" />
+    <p> logo of novacraze </p>
+    </a>
+    <a href="#" class="portfolio-item" tabindex="0" aria-label="Poster design work sample 1">
+      <img src="C:\Users\pc\Downloads\Gemini_Generated_Image_ys7zbjys7zbjys7z.png" alt="Poster Design Sample 1" />
+<p> poster of novacraze </p>
+    </a>
+    <a href="https://gurukavyasree.github.io/samplewebsite/" class="portfolio-item" tabindex="0" aria-label="Website design work sample 1">
+      <img src="C:\Users\pc\Downloads\Gemini_Generated_Image_1dgtb11dgtb11dgt.png" alt="Webpage Design Sample 1" />
+<p> website of novacraze </p>
+    </a>
+    
+    </a>
+  </div>
+</section>
+
+<section id="testimonials" aria-label="Client testimonials for Creative Hub">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial" tabindex="0" aria-label="Testimonial from client Emily R">
+    "Creative Hub’s logo design elevated our brand identity beyond expectations. Kavya was responsive and delivered on time!"
+  </div>
+  <div class="testimonial" tabindex="0" aria-label="Testimonial from client José M">
+    "Our new website is vibrant and user-friendly — thanks to Creative Hub's professional touch. Highly recommended."
+  </div>
+  <div class="testimonial" tabindex="0" aria-label="Testimonial from client Priya K">
+    "The posters designed stood out at our event and helped us get maximum attendance. Creative Hub was very collaborative."
+  </div>
+</section>
+
+<section id="contact" aria-label="Contact Creative Hub" role="region">
+  <div class="container">
+    <h2>Get In Touch</h2>
+<p>Contact Number: 6302787575</p>
+    <form action="https://formspree.io/f/mldoqaov" method="POST">
+  <label>Your Email: <input type="email" name="email"></label>
+  <label>Your Message: <textarea name="message"></textarea></label>
+  <button type="submit">Send</button>
+</form>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2023 Creative Hub Freelance Services. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
